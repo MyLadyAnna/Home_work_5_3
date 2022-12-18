@@ -1,20 +1,24 @@
 # Напишите программу, которая найдёт произведение пар чисел списка. 
 # Парой считаем первый и последний элемент, второй и предпоследний и т.д.
 
-numbers = input('Введите несколько чисел через пробел: ').split(' ') 
-your_list = []
+import random
+
+length_list = int(input('Введите длину списка: '))
 my_list = []
+result_list = []
 
-for i in range(len(numbers)):           # вывод введённых чисел списком
-    your_list.append(int(numbers[i]))
-print(f'Введённый список: {your_list}')
+for _ in range(length_list):                # вывод рандомного списка
+    my_list.append(random.randint(1, 10))
 
-if len(numbers)%2 == 0:
-    for i in range(int(len(numbers)/2)):
-        multiplication = int(numbers[i]) * int(numbers[len(numbers)-1-i])
-        my_list.append(multiplication)
+print(f'Сгенерированный список: {my_list}')
+
+if len(my_list)%2 == 0:
+    for i in range(int(len(my_list)/2)):
+        multiplication = int(my_list[i]) * int(my_list[len(my_list)-1-i])
+        result_list.append(multiplication)
 else:
-    for i in range(int(len(numbers)/2 + 1)):        # чтобы программа корректно работала при нечётном количестве чисел 
-        multiplication = int(numbers[i]) * int(numbers[len(numbers)-1-i])
-        my_list.append(multiplication)
-print(f'Полученный список: {my_list}')
+    for i in range(int(len(my_list)/2 + 1)):        # чтобы программа корректно работала при нечётном количестве чисел
+        multiplication = int(my_list[i]) * int(my_list[len(my_list)-1-i])
+        result_list.append(multiplication)
+
+print(f'Полученный список: {result_list}')
