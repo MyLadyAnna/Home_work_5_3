@@ -15,7 +15,7 @@ for _ in range(length_list):
         my_list.append(number)      
 print(f'Полученный список: {my_list}')
 
-max_fraction = 0
+max_fraction = 0        # не знаю как обойти числа, тк если брать мин и макс как дробную часть 1, то программа ломается если 1 число будет целое (меньше 0 дробной части не будет)
 min_fraction = 999
 
 for item in my_list:                                # Ищем max и min
