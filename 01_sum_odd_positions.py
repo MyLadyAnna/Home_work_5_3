@@ -3,8 +3,13 @@
 
 numbers = input('Введите несколько чисел через пробел: ').split(' ') 
 sum = 0
+my_list = []
+
+for i in range(len(numbers)):           # вывод введённых чисел списком
+    my_list.append(int(numbers[i]))
+print(f'Ваш список: {my_list}')
 
 for i in range(len(numbers)):
     if i%2 != 0:
         sum += int(numbers[i])
-print(sum)
+print(f'Сумма элементов списка, стоящих на позиции с нечетным индексом: {sum}')
